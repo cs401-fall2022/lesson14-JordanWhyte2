@@ -19,6 +19,6 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@jest/globals": "^29.2.0"
+    "@jest/globals": "^29.2.1"
   }
 }
