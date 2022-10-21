@@ -7,7 +7,6 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.19.1.css">
 </head>
 
 <body>
@@ -21,11 +20,11 @@
 <p>Typescript consistently checks that you assign language primitives like strings and numbers.</p>
 
 <br>
-<p>For example, if we initialize a string with Javascript: 
+<p>For example, if we initialize a string with Javascript: </p>
   
-  <br><div style="background-color:black;color:white;padding:20px;"> let helloWorld = "Hello World"; </div><br>
+  <br><div class="box"> let helloWorld = "Hello World"; </div><br>
   
-Typescript will see the value is a string, and define its type as string. </p>
+<p>Typescript will see the value is a string, and define its type as string. </p>
 
 <br><br>
 
@@ -35,30 +34,30 @@ Typescript will see the value is a string, and define its type as string. </p>
 <p>Typesscipt can also create an object that has multiple types inside of it. These types can either be declared using an inferface or inferred using const:
 
 <br> 
-<div style="background-color:black;color:white;padding:20px;">
-  <p>const user = { <br>
+<div class="box">
+    const user = { <br>
     name: "Jordan",<br>
     id: 114172256,<br>
-  };</p>
+  };
 </div>
 <br>
-<div style="background-color:black;color:white;padding:20px;">
-  <p>interface User {<br>
+<div class="box">
+  interface User {<br>
     name: string;<br>
     id: number;<br>
-  }</p>
+  }
 </div>
 </p>
 
 <p>Using the interface is as simple as creating an object with the interface name as the type:</p>
 
-<div style="background-color:black;color:white;padding:20px;">
-<p>
+<div class="box">
+
   const user: User = { <br>
     name: "Jordan",<br>
     id: 114172256,<br>
   };
-</p>
+
 </div>
 
 
@@ -68,24 +67,24 @@ Typescript will see the value is a string, and define its type as string. </p>
 
 <h2>Creating types</h2>
 
-<p>TypeScript can be used to crate types by combining simple ones. This can be done with unions. A common use for this is to create a <b>boolean</b> type within your code.
+<p>TypeScript can be used to crate types by combining simple ones. This can be done with unions. A common use for this is to create a <b>boolean</b> type within your code.</p>
 
-  <div style="background-color:black;color:white;padding:20px;">
+  <div class="box" >
   type boolean = true | false;
   </div>
 
   <br>
-
+<p>
   Unions can also be used within functions to handle different types of parameters. The same function can be used to get the length of a string or an array.
   By using unions in parameters code can be simplified.
 
   Additionally functions can check the type of a parameter and produce different outputs depending.
-
+</p>
   <br>
   <br>
-  A triple equals sign (===) can be used to check the type of an object:
-
-  <div style="background-color:black;color:white;padding:20px;">
+<p> A triple equals sign (===) can be used to check the type of an object:
+</p>
+  <div class="box">
   if(typeof obj === "string"){<br>
     return obj;
 
@@ -94,15 +93,16 @@ Typescript will see the value is a string, and define its type as string. </p>
 
 
   <br>
+<p>
   Generics can be used to provide variables to types.
   An array without a generic could contain anything, but a generic can describe what values are allowed to be stored within the array.
+</p>
   
   
-  
-  <div style="background-color:black;color:white;padding:20px;">
+  <div class="box">
   type StringArray = Array< string>;
   </div>
-</p>
+
 
 <br><br>
 
@@ -110,9 +110,9 @@ Typescript will see the value is a string, and define its type as string. </p>
 <h2>Exceptions and Errors</h2>
 
 <p>Just like with other languages, TypeScript uses try, catch, and finally blocks.
-We can attempt to run a function and catch if that function throws an exception, then run the finally block every time.
+We can attempt to run a function and catch if that function throws an exception, then run the finally block every time.</p>
 
-<div style="background-color:black;color:white;padding:20px;">
+<div class="box">
 try{<br>
   runTask();<br>
 }<br>
@@ -125,12 +125,30 @@ finally{<br>
 }
 </div>
 
+<br><br>
 
+
+<h2>Structural Type System</h2>
+<p>Typescript can check if objects are the same type by checking the shape of the values.
+  Shape matching requires only a subset of an object's fields to be shape-matched.
 </p>
 
+<br><br>
 
+<h2>Non-exception Failures</h2>
+<p>Javascipt can return undefined when referencing an object that does not exist.
+  Typescript instead will throw an error about the variable not being defined.
+  This allows for legitimate bug catching easier. Typescript is able to catch far more bugs than JavaScipt for things like typos.
+</p>
+<div class="box">
+  const user= { <br>
+    name: "Jordan", <br>
+    age: 19, <br>
+  }; <br>
 
-
+  console.log(user.location);
+</div>
+<p>The code above would throw an error for the property location not existing inside of user.</p>
 
 </body>
 

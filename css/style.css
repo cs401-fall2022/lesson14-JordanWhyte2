@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+
+}
+h1{
+    color: white;
+}
+
+p{
+    color: white;
+
+}
+
+h2{
+    color: white;
+}
+
+div.box {
+    background-color: lightseagreen;
+    padding:20px;
+    color: black;
+}
